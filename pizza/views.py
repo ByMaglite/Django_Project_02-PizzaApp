@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from pizza.forms import PizzaForm
 from .models import PizzaApp
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -13,6 +14,7 @@ def order(request):
         form = PizzaForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request,"Order a pizza succesfully")
             return redirect('order')
     
     context = {
