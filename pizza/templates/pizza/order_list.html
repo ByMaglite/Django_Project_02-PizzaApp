@@ -1,10 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-
+<div class="order">
 <h2>Order List</h2>
 
-<ul>
+<ul class="list-group">
     {% for order in orders %}   
-        <li>{{order}} </li>   
+        <li class="list-group-item">{{order}} </li>   
     {% endfor %}
 </ul>
+</div>
+
 {% endblock content %}

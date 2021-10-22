@@ -2,15 +2,13 @@
 
 
 {% block content %}
+<div class="order">
+    <h2> Order a Pizza </h2>
+    {% load crispy_forms_tags %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{form | crispy}}
+        <input type="submit" value="Order Pizza">
+    </form>
+</div>
 
-<h2> Order a Pizza </h2>
-
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %} {{form.as_p}}
-
-    <input type="submit" value="Add Order">
-
-</form>
-    
 {% endblock content %}
-    

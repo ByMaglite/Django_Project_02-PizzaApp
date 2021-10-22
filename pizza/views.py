@@ -31,6 +31,7 @@ def order_list(request):
             form.save()
             return redirect("order")
     context = {
+        'form':form,
         'orders' : orders,
     }
     return render(request, "pizza/order_list.html", context)
