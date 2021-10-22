@@ -6,12 +6,12 @@ class PizzaApp(models.Model):
     topping1 = models.CharField( max_length=100)
     topping2 = models.CharField( max_length=100)
     SIZE =(
-        ("Small", "Small"),
-        ("Medium", "Medium"),
-        ("Large", "Large"),
+        ("Small", "küçük"),
+        ("Medium", "orta"),
+        ("Large", "büyük"),
     )
-    size = models.IntegerField(max_length=50, choices=SIZE)
+    size = models.CharField(max_length=50, choices=SIZE)
     
             
     def __str__(self):
-        return self.topping1, self.topping2, self.SIZE
+        return f" Your pizzas prepared with {self.topping1} and {self.topping2} as {self.size}"
