@@ -9,6 +9,14 @@
         {% csrf_token %} {{form | crispy}}
         <input type="submit" value="Order Pizza">
     </form>
+    <br><br>
+    <p>Want more than one pizza</p>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="quantity">Number:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="6" value="Get Pizzaz">
+        <input type="submit" value="Get Pizzas">
+    </form>
 </div>
 
 {% endblock content %}
